@@ -1,0 +1,37 @@
+html(lang="en")
+    head
+    body 
+        include partials/headers
+     
+        //textboxes to add artwork info
+        h3 Add Your Artwork
+        form(action="/addArt" method="post")
+            | Name of Artwork: 
+            input(type="textbox" name="name" required)
+            br
+            br
+            | Year: 
+            input(type="textbox" name="year" required)
+            br
+            br
+            | Medium: 
+            input(type="textbox" name="medium" required)
+            br
+            br
+            | Category: 
+            input(type="textbox" name="category" required)
+            br
+            br
+            | Description: 
+            input(type="textbox" name="description" required)
+            br
+            br
+            | Image Link: 
+            input(type="textbox" name="image" required)
+            br
+            br
+            |
+            button(type="submit") Add Artwork
+            |
+            br
+            br

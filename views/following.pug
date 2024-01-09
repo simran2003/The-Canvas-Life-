@@ -1,0 +1,12 @@
+html(lang="en")
+    head
+    body 
+        include partials/headers
+        h3 Artists you Follow
+        each artist in following
+            a(href=`/artist/${artist}`) #{artist}
+            br
+            
+       
+
+        

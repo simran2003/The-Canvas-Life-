@@ -1,0 +1,16 @@
+include search
+//displays 10 artworks per page
+each artwork in artworks
+	img(class="image" src=artwork.image width="20%")
+	br
+	h4
+		a(href=`/artpiece/${artwork.name}`) #{artwork.name} 
+
+if current > 1
+	- let url = "/artworks?page=" + (current-1)
+	- if(qstring.length > 0){ url += "&" + qstring; }
+	a(href=url) Previous
+	| 
+- url = "/artworks?page=" + (current+1)
+- if(qstring.length > 0){ url += "&" + qstring; }
+a(href=url) Next

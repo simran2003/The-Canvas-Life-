@@ -1,0 +1,28 @@
+html(lang="en")
+    head
+      style.
+            body {
+                background-color: #aee3f5; /* Pastel blue background color */
+            }
+    body 
+        h1 Welcome to the Canavas Life 
+        //login
+        span
+            form(action="/login" method="post")
+                br
+                | Username: 
+                input(type="text" name="username" required)
+                br
+                br
+                |   Password: 
+                input(type="password" name="password" required)
+                br
+                br 
+                button(type="submit") Login
+        
+        //create account
+        span 
+            p create an account if you do not have one:&nbsp;
+                a(href="/signup") Sign Up
+
+        

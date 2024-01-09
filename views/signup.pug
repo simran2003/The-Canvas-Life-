@@ -1,0 +1,21 @@
+html
+    head
+        title User SignUp
+	
+    body
+        a(href="/") Home
+        br
+        br
+        div
+            | Username: 
+            input#name(type="textbox" required)
+        div 
+            br
+            |   Password: 
+            input#pass(type="password" required)
+        div
+            br
+            button#signup(type="button") Sign Up
+        div#error(style="color:red")
+
+        script(src="/user-signup.js")

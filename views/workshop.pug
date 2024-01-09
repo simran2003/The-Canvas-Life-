@@ -1,0 +1,12 @@
+html(lang="en")
+    head
+    body 
+        include partials/headers
+        h3 Add Your Workshop
+        span
+            form(action="/addWorkshop" method="post")
+                | Title: 
+                input(type="textbox" name="title" required)
+                br
+                br
+                button(type="submit") Add Workshop

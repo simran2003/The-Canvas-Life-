@@ -1,0 +1,16 @@
+html(lang="en")
+    head
+    body 
+        include partials/headers
+        h3 Artworks you Like
+        each artwork in user.likes
+            a(href=`/artpiece/${artwork}`) #{artwork}
+            |
+            button#like(type="button" onclick='unlike("' + artwork +'")') Unlike
+            br
+
+        script(src="/unlike.js")
+            
+       
+
+        

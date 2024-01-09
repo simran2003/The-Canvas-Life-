@@ -1,0 +1,30 @@
+html(lang="en")
+    head
+    body 
+        include partials/headers
+        br
+        if artwork.likes 
+            p likes: #{artwork.likes.length}
+
+        img(class="image" src=artwork.image width="20%")
+        br
+        h4
+            a(href=`/artist/${artwork.artist}`) #{artwork.artist} 
+            
+        p #[strong '#{artwork.name}'] | #{artwork.year}
+        p category: #{artwork.category}
+        | 
+        p medium: #{artwork.medium}
+        p=artwork.description
+
+        //like or unlike artwork
+        div
+            if likes 
+                button#like(type="button" onclick='like("' + artwork.name +'")') Unlike 
+                //onclick='like("' + artwork.artist +'",  "'+ artwork.name +'")'
+            else 
+                button#like(type="button" onclick='like("' + artwork.name +'")') Like
+
+        script(src="/like.js")
+
+        

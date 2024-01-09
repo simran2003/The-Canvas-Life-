@@ -1,0 +1,64 @@
+html(lang="en")
+    head
+     style.
+            body {
+                background-color: #ffd1dc; /* Pastel pink background color */
+            }
+    body 
+        if !session.loggedin 
+            a(href="/") Home
+            p you are not logged in
+       
+        else
+            include partials/headers
+            h1=session.username
+            
+            //switch between artist types
+            if session.artistType
+                p #[strong Account Type:] Artist
+                button#artist(type="button") Switch to Patron
+            else   
+                p #[strong Account Type:] Patron
+                button#artist(type="button") Switch to Artist
+            
+            //review, following
+            span
+                br
+                br
+                p #[strong Review Your Reviews:] 
+                    a(href="/reviews") Reviews
+                p #[strong Artists You Follow:] 
+                    a(href="/following") Following
+
+            //add artwork or workshops
+            div
+                if session.artistType
+                    p #[strong  Add Your Own Artwork:] 
+                        a(href="/addArt") Add Artwork
+                    p #[strong  Create a Workshop:] 
+                        a(href="/addWorkshop") Add Workshop
+                
+            //display artworks
+            div#UserArt 
+                br
+                if artworks.length > 0
+                    h3 Artwork
+                    each artwork in artworks
+                        img(class="image" src=artwork.image width="20%")
+                        br
+                        h4
+                            a(href=`/artpiece/${artwork.name}`) #{artwork.name}
+
+            //display workshops
+            div#userWorkshops
+                if workshops.length > 0 
+                    h3 Workshops
+                    ul 
+                    each title in workshops 
+                        li=title
+
+            script(src="/modify-user.js")
+
+       
+
+        

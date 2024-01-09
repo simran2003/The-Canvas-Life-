@@ -1,0 +1,31 @@
+html(lang="en")
+    head
+    style.
+            body {
+                background-color: #b0e0e6; /* Pastel green background color */
+            }
+        //link(rel='stylesheet', href='css/styles.css' type='text/css')
+    body 
+        include partials/headers
+        
+        h3 Search for Artwork
+        form(action="/artworks" modify="get")
+            | Name: 
+            input(type="textbox" name="name")
+            br
+            br
+            | Artist: 
+            input(type="textbox" name="artist")
+            br
+            br
+            | Category: 
+            input(type="textbox" name="category")
+            br
+            br
+            |
+            button#search(type="submit") Find Artwork
+            //onclick='location.href="/artworks"'
+            br
+            br
+
+        //script(src="/search-gallery.js")

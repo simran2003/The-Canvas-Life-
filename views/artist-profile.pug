@@ -1,0 +1,41 @@
+html(lang="en")
+    head
+    body 
+        include partials/headers
+        h1#artist=artist.username
+        
+        //display artist type
+        if artist.artistType
+            p #[strong Account Type:] Artist
+        else   
+            p #[strong Account Type:] Patron
+
+        //follow/unfollow
+        if following 
+            button#follow(type="button" onclick='following("'+ artist.username +'")') Unfollow 
+        else 
+            button#follow(type="button" onclick='following("'+ artist.username +'")') Follow
+            
+        //display artwork
+        div#artistArt 
+            br
+            h3 Artwork
+            each artwork in artworks
+                img(class="image" src=artwork.image width="20%")
+                br
+                h4
+                    a(href=`/artpiece/${artwork.name}`) #{artwork.name}
+
+        //display workshops
+        div#artistWorkshops
+            h3 Workshops
+            ul 
+            each title in artist.workshops 
+                li=title
+                    button#enroll(type="button") enroll
+
+        script(src="/following.js")
+        script(src="/enroll.js")
+       
+
+        
